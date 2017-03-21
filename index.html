@@ -9,11 +9,42 @@
 
   <!-- components -->
   <link rel="stylesheet" href="components/header/header.css">
+  <link rel="stylesheet" href="components/nav-drawer/nav-drawer.css">
+
+  <style type="text/css">
+    .svg-ic_menu_24px-dims { width: 24px; height: 24px; }
+  </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol viewBox="0 0 24 24" id="ic_menu_24px"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></symbol>
+</svg>
+
 <header class="header">
-
+  <button class="header__button header__button--drawer ssm-toggle-nav" title="Open / close">
+    <svg class="svg-ic_menu_24px-dims">
+      <use xlink:href="#ic_menu_24px"></use>
+    </svg>
+  </button>
 </header>
+<nav class="nav-drawer">
 
+</nav>
+
+
+
+<div class="ssm-overlay ssm-toggle-nav"></div>
+
+<!-- jQuery library (served from Google) -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- touchSwipe library -->
+<script src="http://labs.rampinteractive.co.uk/touchSwipe/jquery.touchSwipe.min.js"></script>
+<!-- Sliding swipe menu javascript file -->
+<script src="libraries/slideandswipe/jquery.slideandswipe.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.nav-drawer').slideAndSwipe();
+  });
+</script>
 </body>
 </html>
